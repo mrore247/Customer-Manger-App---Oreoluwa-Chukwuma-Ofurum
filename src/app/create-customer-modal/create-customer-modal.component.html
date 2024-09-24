@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Customer Created Successfully!</h2>
+<h6
+  mat-dialog-title
+  style="font-size: small; margin-top: -50px; align-items: center"
+>
+  Below are the details of created customer
+</h6>
+<mat-dialog-content>
+  <form>
+    <mat-label>Name</mat-label>
+    <mat-form-field>
+      <input matInput placeholder="Name" [value]="data.name" disabled />
+    </mat-form-field>
+    <mat-label>Email</mat-label>
+    <mat-form-field>
+      <input matInput placeholder="Email" [value]="data.email" disabled />
+    </mat-form-field>
+    <mat-label>Phone</mat-label>
+    <mat-form-field>
+      <input matInput placeholder="Phone" [value]="data.phone" disabled />
+    </mat-form-field>
+    <mat-label>Address</mat-label>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Address"
+        [value]="data.address.street || data.address"
+        disabled
+      />
+    </mat-form-field>
+  </form>
+  <mat-dialog-content>
+    <div mat-dialog-actions>
+      <button mat-button (click)="closeModal()">Close</button>
+    </div>
+  </mat-dialog-content>
+  </mat-dialog-content>

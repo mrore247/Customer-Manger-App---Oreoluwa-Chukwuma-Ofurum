@@ -1,0 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  width: 100%;
+}
+
+.topright {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchbar {
+  margin-top: 25px;
+  width: 350px;
+}

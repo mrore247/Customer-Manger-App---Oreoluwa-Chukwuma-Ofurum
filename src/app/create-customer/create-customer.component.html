@@ -1,0 +1,37 @@
+<body>
+  <div class="parentComponent">
+    <div class="formContainer">
+      <h3 class="formHeader">Create Customer</h3>
+
+      <form
+        class="formClass"
+        [formGroup]="customerFormGroup"
+        (ngSubmit)="createNewCustomer(customerFormGroup.value)"
+      >
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input type="text" formControlName="name" matInput />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" formControlName="email" matInput />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Phone</mat-label>
+          <input type="text" formControlName="phone" matInput />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input type="text" formControlName="address" matInput />
+        </mat-form-field>
+
+        <div class="example-button-row">
+          <button mat-flat-button>Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

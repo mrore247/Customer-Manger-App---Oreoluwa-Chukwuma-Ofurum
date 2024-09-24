@@ -1,0 +1,35 @@
+.formClass {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formHeader {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+
+.formContainer {
+  background-color: #353935;
+  width: 50%;
+  margin: auto;
+  box-shadow: #36454f 1px 1px 1px 1px;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.parentComponent {
+  display: flex;
+  height: 100svh;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-button-row {
+  align-self: center;
+}
+
+body {
+  background-color: black;
+}

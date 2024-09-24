@@ -1,0 +1,71 @@
+<mat-toolbar>
+  <h2>Customer Manager</h2>
+  <span class="example-spacer"></span>
+
+  <div class="topright">
+    <mat-form-field id="searchbar">
+      <input
+        matInput
+        type="search"
+        placeholder="Search for customers by name or email"
+        [(ngModel)]="searchQuery"
+        (input)="searchFilter()"
+      />
+    </mat-form-field>
+
+    <button
+      mat-icon-button
+      (click)="goTo()"
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef>Phone</th>
+    <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef>Address</th>
+    <td mat-cell *matCellDef="let element">{{ element.address.street }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="openViewModal(element)">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <button mat-icon-button (click)="openEditModal(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="deleteCustomer(element.id)">
+        <mat-icon color="warn">delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
